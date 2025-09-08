@@ -21,7 +21,7 @@ School of Computer Science and Technology, Harbin Institute of Technology, Shenz
   <strong>🛠️ We're still cooking — Stay tuned!🛠️<br>⭐ Give us a star if you like it! ⭐</strong>
 </h3>
 
-[![Star History Chart](https://api.star-history.com/svg?repos=JiuTian-VL/CogVLA&Date)](https://www.star-history.com/#JiuTian-VL/CogVLA&Date)
+
 
 </div>
 </div>
@@ -84,4 +84,4 @@ If you find this work useful for your research, please kindly cite our paper.
 }
 ```
 
-
+[![Star History Chart](https://api.star-history.com/svg?repos=JiuTian-VL/CogVLA&Date)](https://www.star-history.com/#JiuTian-VL/CogVLA&Date)
