@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- <h1>JiuTian (九天) </h1> -->
-<h2 class="papername"> <img src="./assets/et.png" style="vertical-align: middle; height: 1em; padding: 0 0.2em;"> CogVLA: Cognition-Aligned Vision-Language-Action Models via Instruction-Driven Routing &amp; Sparsification</h2>
+<h2 class="papername"> <img src="./assets/et.png" style="vertical-align: middle; height: 1em; padding: 0 0.2em;"> CogVLA: Cognition-Aligned Vision-Language-Action Models via Instruction-Driven Routing &amp; Sparsification<br>NeurIPS 2025</h2>
 <div>
 <div>
     <a href="https://orcid.org/0009-0007-7675-3550" target="_blank">Wei Li</a>,
@@ -18,7 +18,7 @@ School of Computer Science and Technology, Harbin Institute of Technology, Shenz
 [![project page](https://img.shields.io/badge/Project-CogVLA-9cf)](https://jiutian-vl.github.io/CogVLA-page/)
 
 <h3 align="center">
-  <strong>🛠️ We're still cooking — Stay tuned!🛠️<br>⭐ Give us a star if you like it! ⭐</strong>
+  <strong>🔥CogVLA is accepted to NeurIPS 2025!🔥<br>🛠️ We're still cooking — Stay tuned!🛠️<br>⭐ Give us a star if you like it! ⭐</strong>
 </h3>
 
 
@@ -30,6 +30,7 @@ School of Computer Science and Technology, Harbin Institute of Technology, Shenz
 
 ## :fire: Updates
 
+- [09/2025] :fire: CogVLA is accepted to **NeurIPS 2025**!
 - [08/2025] :fire: [Project page](https://jiutian-vl.github.io/CogVLA-page/) released
 - [08/2025] :fire: [arXiv paper](https://arxiv.org/abs/2508.21046) released.
 
@@ -79,7 +80,7 @@ If you find this work useful for your research, please kindly cite our paper.
 @article{li2025cogvla,
   title={CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing \& Sparsification},
   author={Li, Wei and Zhang, Renshan and Shao, Rui and He, Jie and Nie, Liqiang},
-  journal={arXiv preprint arXiv:2508.21046},
+  journal={Advances in neural information processing systems},
   year={2025}
 }
 ```
