@@ -6,7 +6,7 @@
 <div>
     <a href="https://orcid.org/0009-0007-7675-3550" target="_blank">Wei Li</a>,
     <a href="https://scholar.google.com/citations?user=iMJYtvwAAAAJ" target="_blank">Renshan Zhang</a>,
-    <a href="https://rshaojimmy.github.io/" target="_blank">Rui Shao*</a>,
+    <a href="https://rshaojimmy.github.io/OrionLab/" target="_blank">Rui Shao*</a>,
     <a href="https://orcid.org/0009-0001-9102-7051" target="_blank">Jie He</a>,
     <a href="https://liqiangnie.github.io/index.html" target="_blank">Liqiang Nie</a>
 </div>
