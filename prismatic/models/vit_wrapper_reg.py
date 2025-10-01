@@ -19,7 +19,7 @@ def unpack_tuple(fn: Callable[[Any], Tuple[Any]]) -> Callable[[Any], Any]:
     return wrapper
 
 
-class FiLMedVisionTransformerRegister(VisionTransformer):
+class FiLMedVisionTransformerAggregator(VisionTransformer):
     """
     Wrapper for timm.models.vision_transformer.VisionTransformer that overrides functions to enable infusing language
     embeddings into visual embeddings via FiLM.
@@ -79,7 +79,7 @@ class FiLMedVisionTransformerRegister(VisionTransformer):
             outputs = [self.norm(out) for out in outputs]
         prefix_tokens = [out[:, 0 : self.num_prefix_tokens] for out in outputs]
         outputs = [out[:, self.num_prefix_tokens :] for out in outputs]
-        outputs = [out[:, self.patch_embed.grid_size[0] * self.patch_embed.grid_size[1]:] for out in outputs]  # treat register as visual embedding
+        outputs = [out[:, self.patch_embed.grid_size[0] * self.patch_embed.grid_size[1]:] for out in outputs]  # treat aggregation token as visual embedding
 
         if reshape:
             grid_size = self.patch_embed.grid_size
@@ -153,7 +153,7 @@ class FiLMedPrismaticVisionBackboneAggregator(nn.Module):
         vit.blocks = nn.Sequential(*block_wrappers)
 
         # Wrap vision transformer with new class that overrides functions used for forward pass
-        vit.__class__ = FiLMedVisionTransformerRegister
+        vit.__class__ = FiLMedVisionTransformerAggregator
         vit.forward = unpack_tuple(partial(vit.get_intermediate_layers, vision_aggr=vision_aggr, n={len(vit.blocks) - 2}))
 
     # def get_num_patches(self) -> int:
@@ -218,7 +218,7 @@ class FiLMedPrismaticVisionBackboneAggregator(nn.Module):
 
 
 # ===================================================
-class VisionTransformerRegister(VisionTransformer):
+class VisionTransformerAggregator(VisionTransformer):
     def _intermediate_layers(
         self,
         x: torch.Tensor,
@@ -263,7 +263,7 @@ class VisionTransformerRegister(VisionTransformer):
             outputs = [self.norm(out) for out in outputs]
         prefix_tokens = [out[:, 0 : self.num_prefix_tokens] for out in outputs]
         outputs = [out[:, self.num_prefix_tokens :] for out in outputs]
-        outputs = [out[:, self.patch_embed.grid_size[0] * self.patch_embed.grid_size[1]:] for out in outputs]  # treat register as visual embedding
+        outputs = [out[:, self.patch_embed.grid_size[0] * self.patch_embed.grid_size[1]:] for out in outputs]  # treat aggregation as visual embedding
 
         if reshape:
             grid_size = self.patch_embed.grid_size
@@ -288,7 +288,7 @@ class PrismaticVisionBackboneAggregator(FiLMedPrismaticVisionBackboneAggregator)
         vit.blocks = nn.Sequential(*block_wrappers)
 
         # Wrap vision transformer with new class that overrides functions used for forward pass
-        vit.__class__ = VisionTransformerRegister
+        vit.__class__ = VisionTransformerAggregator
         vit.forward = unpack_tuple(partial(vit.get_intermediate_layers, vision_aggr=vision_aggr, n={len(vit.blocks) - 2}))
 
     def forward(self, pixel_values: torch.Tensor) -> torch.Tensor:
