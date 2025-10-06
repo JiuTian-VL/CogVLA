@@ -107,6 +107,10 @@ The attention maps of CogVLA highlight task-relevant regions in the input image,
 <img src='assets/attention.png' width='100%'>
 </div>
 
+https://github.com/user-attachments/assets/31a3616d-eecf-47e6-8bf6-cc5471dc1de4
+
+https://github.com/user-attachments/assets/67629cab-1175-40be-9250-7591d9b2b65c
+
 ## :fire: Citation
 
 If you find this work useful for your research, please kindly cite our paper.
@@ -121,6 +125,7 @@ If you find this work useful for your research, please kindly cite our paper.
 ```
 
 [![Star History Chart](https://api.star-history.com/svg?repos=JiuTian-VL/CogVLA&Date)](https://www.star-history.com/#JiuTian-VL/CogVLA&Date)
+
 
 
 
