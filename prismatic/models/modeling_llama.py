@@ -88,10 +88,10 @@ def llama_sdpa_attention_forward(
         min_dtype = torch.finfo(hidden_states.dtype).min
         num_pad = (causal_mask[:, 0, -1, :] == min_dtype).sum(dim=1)
         num_act = NUM_ACTIONS_CHUNK * ACTION_DIM
+        num_act += 1  # stop token
 
         new_mask = causal_mask.clone()
         for idx, n_pad in enumerate(num_pad):
-            num_act += 1  # stop token
             if n_pad == 0:
                 new_mask[idx, :, -num_act:, -num_act:] = 0
             else:
