@@ -76,21 +76,21 @@ ninja --version; echo $?  # Verify Ninja --> should return exit code "0"
 pip install "flash-attn==2.5.5" --no-build-isolation
 ```
 
-## Quick Start
-
-Download the checkpoint from [Hugging Face](https://github.com/JiuTian-VL/CogVLA). 
-
-Fill the checkpoint path in `demo.py`. Then run the following command
-
-```bash
-CUDA_VISIBLE_DEVICES=0 python demo.py
-```
 
 ## Training and Evaluation
 
 See [LIBERO.md](docs/LIBERO.md) for fine-tuning/evaluating on LIBERO simulation benchmark task suites.
 
 See [ALOHA.md](docs/ALOHA.md) for fine-tuning/evaluating on real-world ALOHA robot tasks.
+
+## Demos
+
+After training, fill your checkpoint path in `demo.py`. Then run the following command
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python demo.py
+```
+
 
 ## Experiments
 
@@ -132,6 +132,7 @@ If you find this work useful for your research, please kindly cite our paper.
 ```
 
 [![Star History Chart](https://api.star-history.com/svg?repos=JiuTian-VL/CogVLA&Date)](https://www.star-history.com/#JiuTian-VL/CogVLA&Date)
+
 
 
 
